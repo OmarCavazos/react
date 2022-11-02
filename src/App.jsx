@@ -1,8 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-
-import HeaderContainer from "./HeaderContainer";
-import MainContainer from "./MainContainer";
-import FooterContainer from "./FooterContainer";
+import Header from "./components/header/Header";
+import Nav from "./components/header/nav/Nav";
+import Main from "./components/main/Main";
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -16,7 +15,7 @@ body,
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: cyan;
+  background-color: #31ae00;
 }
 `;
 
@@ -25,9 +24,12 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <HeaderContainer />
-      <MainContainer />
-      <FooterContainer />
+      <Header titulo="Logo">
+        <h2> Empresa </h2>
+        <h3> Up </h3>
+        <Nav />
+      </Header>
+      <Main />
     </>
     );
 }
