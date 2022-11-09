@@ -1,15 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
+import Nav from './nav/Nav'
 
 const HeaderStyled = styled.header`
     height: 10vh;
-    background-color: white;
+    background-color: darkcyan;
 `
 
 const Header = () => {
     return (
     <HeaderStyled>
         Header
+        <Nav/>
     </HeaderStyled>
     )
 }

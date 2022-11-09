@@ -1,10 +1,12 @@
 import React from 'react'
-import ProductsContainer from '../../header/productsContainer/ProductsContainer'
+import { Outlet } from 'react-router-dom';
 
-export const Main = () => {
+const Main = () => {
     return (
-        <div>Main
-            <ProductsContainer/>
-        </div>
+        <main>
+            <Outlet />
+        </main>
     )
 }
+
+export default Main;

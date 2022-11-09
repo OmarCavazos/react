@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import { Main } from "./componentes/main/Main";
-import Header from "./header/Header";
-import ProductsContainer from "./header/productsContainer/ProductsContainer";
+import Main from "./componentes/main/Main";
+import Header from "./componentes/header/Header";
 
 
 const GlobalStyle = createGlobalStyle`
@@ -27,7 +26,7 @@ function App() {
     <>
       <GlobalStyle />
       <Header/>
-      <Main />
+      <Main/>
     </>
   );
 }
