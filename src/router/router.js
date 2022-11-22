@@ -1,46 +1,66 @@
-import { createBrowserRouter} from 'react-router-dom';
-import App from '../App' 
-import ProductContainer from '../componentes/main/product/ProductContainer';
-import ProductsContainer from '../componentes/main/products/ProductsContainer';
-import Register from '../componentes/main/register/Register';
-import Error from '../componentes/main/error/Error';
+import { createBrowserRouter } from "react-router-dom";
+import App from "../App";
+import Login from "../components/forms/Login";
+import Register from "../components/forms/Register";
+import Count from "../components/main/Count";
+import Logout from "../components/main/Logout";
+import ProductsListContainer from "../components/main/productsListContainer/ProductsListContainer";
+import ProductDetailContainer from "../components/main/productDetail/ProductDetailContainer"
 
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <App />,
-        errorElement: <Error />,
-        children: [
-            {
-                path: "/",
-                element: "Home",
-            },
-            {
-                path: "/about",
-                element: "About",
-            },
-            {
-                path: "/products",
-                element: <ProductsContainer />,
-            },
-            {
-                path: "/product/:id",
-                element: <ProductContainer />,
-            },
-            {
-                path: "/cart",
-                element: "cart",
-            },
-        ],
-    },
-    {
-        path: "/register",
-        element: <Register />,
-    },
-    {
-        path: "/login",
-        element: "login",
-    },
-])
+import Cart from  "../components/main/cart/Cart"
 
-export default router;
+const router = createBrowserRouter(
+    [
+        {
+            path: "/",
+            element: <App />,
+            errorElement: "No Jala",
+            children: [
+                {
+                    path: "/",
+                    element: "home"
+                },
+                {
+                    path: "/about",
+                    element: "about"
+                },
+                {
+                    path: "/products",
+                    element: <ProductsListContainer />
+                },
+                {
+                    path: "/product/:id",
+                    element: <ProductDetailContainer />
+                },
+                {
+                    path: "/cart",
+                    element: <Cart />
+                },
+                {
+                    path: "/logout",
+                    element: <Logout />
+                },
+                {
+                    path: "/editProfile",
+                    element: "editProfile"
+                },
+                {
+                    path: "/count",
+                    element: <Count/>
+                }
+
+            ]
+        },
+        {
+            path: "/register",
+            element: <Register />
+        },
+        {
+            path: "/login",
+            element: <Login />
+        }
+
+    ]
+)
+
+export default router

@@ -1,0 +1,30 @@
+import React, { useState } from "react";
+import styled from "styled-components";
+import HMenu from "./HMenu/HMenu";
+import Logo from "./logo/Logo";
+import Nav from "./nav/Nav";
+
+const HeaderStyled = styled.header`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  padding:10px;
+  min-height: 10vh;
+`;
+
+const Header = () => {
+  const [click, setClick] = useState(false);
+  const clicked = () => {
+    setClick(!click);
+  };
+  return (
+    <HeaderStyled>
+      <Logo />
+      <Nav click={click} clicked={clicked}/>
+      <HMenu click={click} clicked={clicked} />
+    </HeaderStyled>
+  );
+};
+
+export default Header;

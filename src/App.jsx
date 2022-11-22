@@ -1,33 +1,25 @@
-import { createGlobalStyle } from "styled-components";
-import Main from "./componentes/main/Main";
-import Header from "./componentes/header/Header";
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
+import Main from "./components/main/Main";
+import Contador from "./context/Contador";
+import UserContext from "./context/UserContext";
+import CartContext from "./context/CartContext";
 
 
-const GlobalStyle = createGlobalStyle`
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body,
-#root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  width: 100vw;
-  background-color: gray;
-
-}
-`;
-
-function App() {
-
+const App = () => {
   return (
     <>
-      <GlobalStyle />
-      <Header/>
-      <Main/>
+    <UserContext>
+        <CartContext>
+          <Contador>
+            <Header/>
+            <Main/>
+            <Footer />
+          </Contador>
+        </CartContext>
+      </UserContext>
     </>
   );
-}
+};
+
 export default App;
